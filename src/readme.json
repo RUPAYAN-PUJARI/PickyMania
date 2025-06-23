@@ -1,0 +1,137 @@
+[
+  {
+    "pic": "/assets/redmi.png",
+    "name": "Redmi",
+    "price": "14,999",
+    "ram": "6GB",
+    "storage": "64GB",
+    "description": "Affordable and reliable with smooth performance.",
+    "rating": 3.5
+  },
+  {
+    "pic": "/assets/realme.png",
+    "name": "Realme",
+    "price": "17,999",
+    "ram": "8GB",
+    "storage": "128GB",
+    "description": "Stylish design with great battery life.",
+    "rating": 4.3
+  },
+  {
+    "pic": "/assets/oneplus.png",
+    "name": "Oneplus",
+    "price": "19,999",
+    "ram": "8GB",
+    "storage": "256GB",
+    "description": "Flagship killer with a smooth UI experience.",
+    "rating": 4.6
+  },
+  {
+    "pic": "/assets/oppo.png",
+    "name": "Oppo",
+    "price": "18,999",
+    "ram": "8GB",
+    "storage": "256GB",
+    "description": "Best for camera lovers and sleek design.",
+    "rating": 3.7
+  },
+  {
+    "pic": "/assets/poco.png",
+    "name": "Poco",
+    "price": "20,999",
+    "ram": "12GB",
+    "storage": "256GB",
+    "description": "Top-tier performance on a budget.",
+    "rating": 4.6
+  },
+  {
+    "pic": "/assets/samsung.png",
+    "name": "Samsung",
+    "price": "16,999",
+    "ram": "8GB",
+    "storage": "256GB",
+    "description": "Trusted brand with vibrant displays.",
+    "rating": 3.9
+  },
+  {
+    "pic": "/assets/huawei.png",
+    "name": "Huawei",
+    "price": "15,999",
+    "ram": "12GB",
+    "storage": "128GB",
+    "description": "Powerful hardware with sleek looks.",
+    "rating": 3.3
+  },
+  {
+    "pic": "/assets/redmagic.png",
+    "name": "Redmagic",
+    "price": "21,999",
+    "ram": "12GB",
+    "storage": "256GB",
+    "description": "Perfect for gamers with turbo cooling.",
+    "rating": 4.7
+  },
+  {
+    "pic": "/assets/vivo.png",
+    "name": "Vivo",
+    "price": "15,999",
+    "ram": "8GB",
+    "storage": "64GB",
+    "description": "Great selfie camera and modern UI.",
+    "rating": 4.0
+  },
+  {
+    "pic": "/assets/infinix.png",
+    "name": "Infinix",
+    "price": "19,999",
+    "ram": "8GB",
+    "storage": "128GB",
+    "description": "Budget powerhouse with stylish design.",
+    "rating": 4.5
+  },
+  {
+    "pic": "/assets/iqoo.png",
+    "name": "IQOO",
+    "price": "20,999",
+    "ram": "12GB",
+    "storage": "128GB",
+    "description": "Performance beast with fast charging.",
+    "rating": 4.8
+  },
+  {
+    "pic": "/assets/motorola.png",
+    "name": "Motorola",
+    "price": "17,999",
+    "ram": "6GB",
+    "storage": "64GB",
+    "description": "Stock Android experience with reliability.",
+    "rating": 4.1
+  },
+  {
+    "pic": "/assets/honor.png",
+    "name": "Honor",
+    "price": "16,999",
+    "ram": "6GB",
+    "storage": "128GB",
+    "description": "Elegant design with decent performance.",
+    "rating": 4.4
+  },
+  {
+    "pic": "/assets/google.png",
+    "name": "Google",
+    "price": "22,999",
+    "ram": "8GB",
+    "storage": "128GB",
+    "description": "Clean UI with the best software updates.",
+    "rating": 4.1
+  },
+  {
+    "pic": "/assets/asus.png",
+    "name": "Asus",
+    "price": "25,999",
+    "ram": "12GB",
+    "storage": "256GB",
+    "description": "Gaming-centric design with robust build.",
+    "rating": 4.6
+  }
+]

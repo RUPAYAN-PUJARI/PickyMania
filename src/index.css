@@ -423,3 +423,50 @@
   cursor: pointer;
   font-weight: 500;
 }
+
+/* Media Query for Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  .Head {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .header-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .header-text h2 {
+    font-size: 1.2rem;
+  }
+
+  .Card {
+    max-width: 90%;
+  }
+
+  .nav-list {
+    margin-left: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .search-bar {
+    width: 90%;
+    margin-left: 0;
+  }
+
+  .modal-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal-content img {
+    max-width: 80%;
+  }
+
+  .foot-info {
+    justify-content: center;
+    margin: 0;
+  }
+}

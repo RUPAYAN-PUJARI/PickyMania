@@ -247,7 +247,7 @@ export default function Account() {
                   className="profile-pic"
                 />
                 <p>
-                  <strong>Username:</strong> {user.username}
+                  <strong>Name:</strong> {user.username}
                 </p>
                 <p>
                   <strong>Email:</strong> {user.email}

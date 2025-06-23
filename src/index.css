@@ -1,5 +1,3 @@
-/* ============================= Base Styles ============================= */
-
 .Head {
   display: flex;
   width: 100%;
@@ -433,8 +431,6 @@
   font-weight: 500;
 }
 
-/* ============================= Responsive Design ============================= */
-
 @media (max-width: 768px) {
   .Head {
     height: auto;
@@ -556,4 +552,81 @@
   .user-info strong {
     width: 60px;
   }
+}
+@media (max-width: 360px) {
+  .header-text h1 {
+    font-size: 1.5rem;
+  }
+  .nav-link {
+    padding: 3px 6px;
+    font-size: 11px;
+  }
+  .filter-slot {
+    min-width: 80px;
+  }
+}
+@media (max-height: 480px) and (orientation: landscape) {
+  .account-wrapper {
+    padding-top: 5px;
+  }
+  .modal-content {
+    max-height: 80vh;
+  }
+}
+@supports (scroll-behavior: smooth) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.cart-link-container {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #ff4444;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.cart-badge.double-digit {
+  width: 24px;
+  border-radius: 12px;
+  padding: 0 4px;
+}
+
+.cart-badge:hover {
+  transform: scale(1.1);
+  background-color: #ff0000;
+}
+
+.plus-icon {
+  font-size: 10px;
+  margin-left: 1px;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.cart-badge {
+  animation: bounce 0.5s ease 1;
 }

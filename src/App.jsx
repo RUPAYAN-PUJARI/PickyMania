@@ -75,9 +75,21 @@ export default function App() {
                 Home
               </Link>
             </li>
-            <li>
+            <li className="cart-link-container">
               <Link to="/Cart" className="nav-link">
                 My Cart
+                {cartItems.length > 0 && (
+                  <span
+                    className={`cart-badge ${
+                      cartItems.length > 9 ? "double-digit" : ""
+                    }`}
+                  >
+                    {Math.min(cartItems.length, 99)}
+                    {cartItems.length > 99 && (
+                      <span className="plus-icon">+</span>
+                    )}
+                  </span>
+                )}
               </Link>
             </li>
             <li>

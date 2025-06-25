@@ -1,7 +1,12 @@
 import Cards from "./Cards";
 import { useState } from "react";
 
-export default function CardGroup({ data, cartItems, addToCart }) {
+export default function CardGroup({
+  data,
+  cartItems,
+  addToCart,
+  handleBuyNow,
+}) {
   const [searchterm, setSearchterm] = useState("");
   const [filRam, setFilRam] = useState("All RAM");
   const [filSto, setFilSto] = useState("All Storage");
@@ -118,6 +123,7 @@ export default function CardGroup({ data, cartItems, addToCart }) {
           <Cards
             items={items}
             addToCart={addToCart}
+            handleBuyNow={handleBuyNow}
             isAdded={cartItems.includes(items.name)}
             onClick={() => setSelectedItem(items)}
           />
@@ -148,6 +154,7 @@ export default function CardGroup({ data, cartItems, addToCart }) {
                 <button
                   className="BuyBtn"
                   onClick={() => {
+                    handleBuyNow(selectedItem);
                     setSelectedItem(null);
                   }}
                 >

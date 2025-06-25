@@ -4,40 +4,41 @@ import CardGroup from "./components/CardGroup";
 import Footer from "./components/Footer";
 import Cart from "./components/Cart";
 import Account from "./components/Account";
-import { useState, useEffect } from "react";
+import BuyNow from "./components/BuyNow";
+import { useState, useEffect, useCallback } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { doc, updateDoc, getDoc } from "firebase/firestore";
 import { db } from "./components/firebase";
 
 export default function App() {
   const [cartItems, setCartItems] = useState([]);
+  const [uid, setUid] = useState(null);
 
   useEffect(() => {
-    const fetchCart = async () => {
-      const uid = localStorage.getItem("uid");
-      if (!uid) return;
-
-      try {
-        const userRef = doc(db, "users", uid);
-        const userSnap = await getDoc(userRef);
-        if (userSnap.exists()) {
-          const userData = userSnap.data();
-          if (Array.isArray(userData.cart)) {
-            setCartItems(userData.cart);
-          }
-        }
-      } catch (error) {
-        console.error("Error fetching cart from Firestore:", error);
-      }
-    };
-
-    fetchCart();
+    const storedUid = localStorage.getItem("uid");
+    if (storedUid) {
+      setUid(storedUid);
+      fetchCart(storedUid);
+    }
   }, []);
 
-  const updateCartInFirestore = async (updatedCart) => {
-    const uid = localStorage.getItem("uid");
-    if (!uid) return;
+  const fetchCart = async (storedUid) => {
+    try {
+      const userRef = doc(db, "users", storedUid);
+      const userSnap = await getDoc(userRef);
+      if (userSnap.exists()) {
+        const userData = userSnap.data();
+        if (Array.isArray(userData.cart)) {
+          setCartItems(userData.cart);
+        }
+      }
+    } catch (error) {
+      console.error("Error fetching cart from Firestore:", error);
+    }
+  };
 
+  const updateCartInFirestore = async (updatedCart) => {
+    if (!uid) return;
     try {
       const userRef = doc(db, "users", uid);
       await updateDoc(userRef, { cart: updatedCart });
@@ -63,6 +64,19 @@ export default function App() {
       return updated;
     });
   };
+
+  const handleBuyNow = useCallback(
+    (item) => {
+      if (!uid) {
+        console.error("UID not found. Cannot proceed to Buy Now.");
+        return;
+      }
+      localStorage.setItem("selectedProduct", JSON.stringify(item));
+      localStorage.setItem("uid", uid);
+      window.location.href = "/BuyNow";
+    },
+    [uid]
+  );
 
   return (
     <>
@@ -107,16 +121,23 @@ export default function App() {
                 data={data}
                 cartItems={cartItems}
                 addToCart={addToCart}
+                handleBuyNow={handleBuyNow}
               />
             }
-          ></Route>
+          />
           <Route
             path="/Cart"
             element={
-              <Cart data={data} cartItems={cartItems} removeCart={removeCart} />
+              <Cart
+                data={data}
+                cartItems={cartItems}
+                removeCart={removeCart}
+                handleBuyNow={handleBuyNow}
+              />
             }
-          ></Route>
-          <Route path="/Account" element={<Account />}></Route>
+          />
+          <Route path="/Account" element={<Account />} />
+          <Route path="/BuyNow" element={<BuyNow />} />
         </Routes>
       </Router>
       <Footer />

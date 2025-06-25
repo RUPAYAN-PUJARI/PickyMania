@@ -1,5 +1,5 @@
 import CartCard from "./CartCard";
-export default function Cart({ data, cartItems, removeCart }) {
+export default function Cart({ data, cartItems, removeCart, handleBuyNow }) {
   return (
     <div className="cart-container">
       <div className="cart-head">
@@ -12,7 +12,13 @@ export default function Cart({ data, cartItems, removeCart }) {
       ) : (
         cartItems.map((name) => {
           const item = data.find((item) => item.name === name);
-          return <CartCard items={item} removeCart={removeCart} />;
+          return (
+            <CartCard
+              items={item}
+              removeCart={removeCart}
+              handleBuyNow={handleBuyNow}
+            />
+          );
         })
       )}
     </div>

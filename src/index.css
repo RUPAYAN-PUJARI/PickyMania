@@ -630,3 +630,77 @@
 .cart-badge {
   animation: bounce 0.5s ease 1;
 }
+
+.buy-now-page {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.buy-now-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #333;
+}
+
+.buy-now-details {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.product-image-container {
+  flex: 1;
+  text-align: center;
+}
+
+.product-image-container img {
+  max-width: 200px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-section {
+  flex: 2;
+}
+
+.info-section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+  color: #444;
+}
+
+.info-section p {
+  margin: 6px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.info-section strong {
+  color: #000;
+}
+
+.pay-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 12px 24px;
+  background-color: #0070ba;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pay-btn:hover {
+  background-color: #005a94;
+}

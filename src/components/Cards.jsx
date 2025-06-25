@@ -1,4 +1,10 @@
-export default function Cards({ items, addToCart, isAdded, onClick }) {
+export default function Cards({
+  items,
+  addToCart,
+  isAdded,
+  onClick,
+  handleBuyNow,
+}) {
   return (
     <>
       <div className="Card">
@@ -11,7 +17,9 @@ export default function Cards({ items, addToCart, isAdded, onClick }) {
             <p>Price: ₹{items.price}</p>
           </h2>
         </div>
-        <button className="BuyBtn">Buy Now</button>
+        <button className="BuyBtn" onClick={() => handleBuyNow(items)}>
+          Buy Now
+        </button>
         <button
           className="AddBtn"
           onClick={() => addToCart(items.name)}
